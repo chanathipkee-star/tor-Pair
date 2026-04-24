@@ -33,13 +33,13 @@ class CommunityExpertsDetailPage extends StatelessWidget {
                   
                   if (data.containsKey('phone') && data['phone'] != null && data['phone']!.isNotEmpty) ...[
                     const Text("เบอร์ติดต่อ", style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold)),
-                    Text(data['phone']!),
+                    Text(data['phone'] ?? ''),
                     const SizedBox(height: 20),
                   ],
 
                   if (data.containsKey('address') && data['address'] != null && data['address']!.isNotEmpty) ...[
                     const Text("ที่อยู่", style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold)),
-                    Text(data['address']!),
+                    Text(data['address'] ?? ''),
                     const SizedBox(height: 20),
                   ],
 

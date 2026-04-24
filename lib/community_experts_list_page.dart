@@ -7,48 +7,48 @@ class CommunityExpertsListPage extends StatelessWidget {
   final List<Map<String, String>> expertList = const [
     {
       "name": "นาย ไชยเดช ",
-      "image": "assets/health1.png", // เปลี่ยนชื่อให้ตรงกับ assets ของคุณ
+      "image": "assets/images/chaidet.jpg", // เปลี่ยนชื่อให้ตรงกับ assets ของคุณ
       "description":
           "เป็นผู้นำเที่ยว สามารถ ติดต่อ ห้องพักห้องนอน หรือร้านอาหาร มีการนำเที่ยว ติดต่อรถ atv ได้ช่วงเดือน พฤษจิกายน ช่วงหน้าหนาววันละ 600 บาท ขับเองได้หรือให้ไกด์ขับก็ได้ ต้องติดต่อก่อนเพื่อเช็คสภาพรถ รถมีจำนวน 13 คัน",
       "phone": "081 980 7743",
     },
     {
       "name": "ลุงคิด",
-      "image": "assets/health2.png",
+      "image": "assets/images/lung_kid.jpg",
       "description":
           "เป็นผู้สอนเกี่ยวกับการต้องลาย หน้าพิพิธภัณฑ์ และสามารถสอบถามความรู้ต่างๆทางหมู่บ้านและเรื่องราวทางประวัติศาสตร์",
       "phone": "ไม่ปรากฏ",
     },
     {
       "name": "นาย ละอ่อง เก็ดสราพร",
-      "image": "assets/health3.png",
+      "image": "assets/images/lung_laong.jpg",
       "description":
           "เป็นผูู้เชี่ยวชาญเกี่ยวกับการ จักสานหมวก เป็นผู้ที่เคยใช้ชีวิตร่วมกับคนญี่ปุ่นในสมัยก่อนเคยใช้ชีวิตร่วมกับทหารญี่ปุ่น",
       "phone": "ไม่ปรากฏ",
     },
     {
       "name": "ท่านพระครู อนุกูลกัลยาณพจน์",
-      "image": "assets/health3.png",
+      "image": "assets/images/phrakru.jpg",
       "description":
           "เป็นผู้ดูแลวัด และให้ความรู้เกี่ยวกับประวัติศาสตร์ของต่อแพ",
       "phone": "089 264 9270",
     },
     {
       "name": "นาย จรุณ จันทรตะกอง",
-      "image": "assets/health3.png",
+      "image": "assets/images/lung_charoon.jpg",
       "description":
           "ผู้ดูแลสวนเกษตรในหมู่บ้านต่อแพ เพราะปลูกและส่งขายทั้งในและนอกประเทศ",
       "phone": "081 746 0133",
     },
     {
       "name": "นาง สุพรรณี เขตสูงเนิน",
-      "image": "assets/health3.png",
+      "image": "assets/images/suphannee.jpg",
       "description": "เป็นร้าน คาเฟ่ มีสินค้าในชุมชนขาย",
       "phone": "082 998 3787",
     },
     {
       "name": "นายสุพรรณ ประภัยวทย์",
-      "image": "assets/health3.png",
+      "image": "assets/images/suphan.jpg",
       "description": "ผูู้ช่วยผู้ใหญ่บ้านเป็นผู้นำเที่ยว ทางสงครามโลกครั้งที่2",
       "phone": "082 998 3787",
     },
@@ -70,7 +70,7 @@ class CommunityExpertsListPage extends StatelessWidget {
         children: [
           // รูปแผนที่ด้านบน
           Image.asset(
-            "assets/health_map.png",
+            "assets/images/experts_banner.jpg",
             fit: BoxFit.cover,
             errorBuilder: (context, e, s) => Container(
               height: 200,

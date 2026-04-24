@@ -31,9 +31,8 @@ class DetailPage extends StatelessWidget {
           children: [
             Image.asset(
               imagePath,
-              height: 250,
               width: double.infinity,
-              fit: BoxFit.cover,
+              fit: BoxFit.fitWidth,
             ),
             const SizedBox(height: 16),
             Padding(

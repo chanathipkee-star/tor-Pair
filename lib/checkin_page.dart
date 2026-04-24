@@ -29,9 +29,9 @@ class CheckInPage extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(12),
             child: Image.asset(
-              'assets/map.jpg',
-              fit: BoxFit.cover,
-              height: 200,
+              'assets/images/1.jpg',
+              fit: BoxFit.fitWidth,
+              width: double.infinity,
             ),
           ),
           const SizedBox(height: 16),
@@ -41,11 +41,13 @@ class CheckInPage extends StatelessWidget {
           ),
           const SizedBox(height: 10),
 
+          
+
           // --- รายการสถานที่ ---
           buildListCard(
             context,
             "วัดต่อแพ (ต่อลมหายใจ)",
-            "assets/img1.jpg",
+            "assets/images/checkin_map.jpg",
             "วัดมีมาตั้งแต่ก่อนสงครามโลกครั้งที่ 2 พ.ศ.2463 เป็นศิลปะพม่าผสมไทใหญ่ ยอดประดับด้วยฉัตรโลหะ 7 ชั้นบนฉัตรมีระฆังแขวนห้อยอยู่เป็นจำนวนมาก ในใต้ถุนวัดเมื่อก่อนเป็นที่พิมพ์ธนบัตร สมัย 1 เยน ไม่ต้องผ่านธนาคารกลางและเป็นที่พักเป็นหน่วยพยาบาล ทหารญี่ปุ่นได้เข้าพักเป็นระยะเวลาอยู่ 2 ปี และกลับไปโดยทิ้งอาวุธไว้อย่างมากมาย",
             "Wat To Phae was built in 1920, before WWII. It showcases Burmese-Shan art styles. During the war, it served as a medical unit and currency printing site for Japanese soldiers.",
             "https://www.google.com/maps/place/%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%95%E0%B9%88%E0%B8%AD%E0%B9%81%E0%B8%9E/@18.8011809,97.9038551,182m/data=!3m1!1e3!4m6!3m5!1s0x30dad1b773abd4e1:0xc3895334dfe45f4a!8m2!3d18.8006875!4d97.9035625!16s%2Fg%2F1vfvczm1?entry=ttu&g_ep=EgoyMDI2MDQxMy4wIKXMDSoASAFQAw%3D%3D",
@@ -54,7 +56,7 @@ class CheckInPage extends StatelessWidget {
           buildListCard(
             context,
             "พิพิธภัณฑ์ (คลังปัญญา)",
-            "assets/img2.jpg",
+            "assets/images/2.jpg",
             "เป็นงานฝีมือของชาวบ้านที่ทำขึ้นมาตั้งแต่อดีต จนถึงปัจจุบัน สามารถเข้าไปรับชมหรือลองทำได้อยู่ข้างกับพิพิธภัฑ์ ต้องลายหรือการฉลุสังกะสีแบบไทยใหญ่ นิยมใช้เป็นของตกแต่งประดับวัด ซุ้มเจ้าฟ้าเจ้าแผ่นดิน",
             "A local museum preserving Shan handicrafts and stencil art. It serves as a learning center for cultural history, local wisdom, and traditional ways of life.",
             "https://www.google.com/maps/@18.8010474,97.9036801,19.25z?entry=ttu&g_ep=EgoyMDI2MDQxMy4wIKXMDSoASAFQAw%3D%3D",
@@ -63,7 +65,7 @@ class CheckInPage extends StatelessWidget {
           buildListCard(
             context,
             "วัดพระธาตุดอยเวียง",
-            "assets/img3.jpg",
+            "assets/images/doi_wiang.jpg",
             "เป็นที่ตั้งถิ่นฐานของชาวชนเผ่าละว้าสมัยก่อนแต่มีการเกิดโรคระบาดเลยถูกทิ้งร้างไว้จนถึงทุกวันนี้สมัยล้านนาในช่วงเวลาพุทธศตวรรษที่ 19-24 เป็นแหล่งโบราณที่มีที่มาก่อนการก่อตั้งหมู่บ้านต่อแพ",
             "An ancient settlement site of the Lawa people. Legend states that the pagoda on Doi Wiang was built over 1,900 years ago.",
             "https://www.google.com/maps/place/%E0%B8%AA%E0%B8%B3%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%AA%E0%B8%87%E0%B8%86%E0%B9%8C%E0%B8%94%E0%B8%AD%E0%B8%A2%E0%B9%80%E0%B8%A7%E0%B8%B5%E0%B8%A2%E0%B8%87/@18.8016967,97.9095907,16z/data=!4m6!3m5!1s0x30dad10014c352ef:0x3287616957cf9bb8!8m2!3d18.7995313!4d97.9085191!16s%2Fg%2F11nbtmn1bz?entry=ttu&g_ep=EgoyMDI2MDQxMy4wIKXMDSoASAFQAw%3D%3D",
@@ -74,7 +76,7 @@ class CheckInPage extends StatelessWidget {
           buildListCard(
             context,
             "ศูนย์เศรษฐกิจพอเพียง (หล่อเลี้ยงชุมชน)",
-            "assets/img4.jpg",
+            "assets/images/sufficiency.jpg",
             "เป็นศูนย์เศรษฐกิจพอเพียงเป็นแหล่งความรู้เกี่ยวกันพืชผักต่าง เลี้ยงสัตว์ตามหลักของเศรษฐกิจพอเพียง มีของขาย อย่างเช่น เมล็ดของต้นอโวคาโด้ อโวคาโด้ตามฤดูกาล และไข่ไก่",
             "A sufficiency economy center providing knowledge on sustainable farming, animal husbandry, and local organic products like avocados and eggs.",
             "https://www.google.com/maps/@18.8050468,97.9107378,612m/data=!3m1!1e3?entry=ttu&g_ep=EgoyMDI2MDQxMy4wIKXMDSoASAFQAw%3D%3D",
@@ -85,7 +87,7 @@ class CheckInPage extends StatelessWidget {
           buildListCard(
             context,
             "ฮ้านกาแฟ (แชร์ความรู้)",
-            "assets/img5.jpg",
+            "assets/images/coffee.jpg",
             "ก้ากิ่งกะหร่า คือการฟ้อนนกกิ่งหร่ามักจะคู่กับตัวโตเป็นศิลปะชั้นสูงอันสะท้อนเอกลักลัษณ์ความเชื่อตามวัฒนธรรมประเพณีท้องถิ่นของชาวไทใหญ่ ชุดนกกิ่งกะหร่านั้นประกอบสําคัญคือลําตัวปีกและหางมีโครงสร้างที่ทําจากไม้ไผ่",
             "The Gin Gala dance (Bird dance) is a high art form reflecting Shan beliefs. It is performed during major festivals using intricate bamboo and cloth costumes.",
             "https://www.google.com/maps/place/Tor+Pae+Cafe+@%E0%B8%82%E0%B8%B8%E0%B8%99%E0%B8%A2%E0%B8%A7%E0%B8%A1/@18.8070336,97.9112226,612m/data=!3m1!1e3!4m6!3m5!1s0x30dad1c814533433:0xa62b96fbe5562527!8m2!3d18.8082263!4d97.9122472!16s%2Fg%2F11l36h79v0?entry=ttu&g_ep=EgoyMDI2MDQxMy4wIKXMDSoASAFQAw%3D%3D",
@@ -93,8 +95,17 @@ class CheckInPage extends StatelessWidget {
           ),
           buildListCard(
             context,
+            "เส้นทางเดินเท้าประวัติศาสตร์",
+            "assets/images/history_path.jpg",
+            "เส้นทางเดินเท้าที่บอกเล่าเรื่องราวในอดีตของหมู่บ้านต่อแพ ผ่านร่องรอยทางประวัติศาสตร์และธรรมชาติที่สวยงาม",
+            "A historical walking path telling the stories of To Phae village through historical traces and beautiful nature.",
+            "https://www.google.com/maps/@18.8010474,97.9036801,19.25z?entry=ttu", // Placeholder link
+            ["เดินชมเส้นทางประวัติศาสตร์", "ถ่ายรูปเช็คอิน"],
+          ),
+          buildListCard(
+            context,
             "ก้ากิงกะหร่า (ยลความเชื่อ)",
-            "assets/img6.jpg",
+            "assets/images/gala_dance.jpg",
             "ในชุมชนบ้านต่อแพใช้วัสดุที่อยู่ในท้องถิ่นคือ ไม้ไผ่ นํามาเป็นผลิตภัณฑ์จักสานเช่น สุ่มไก่ ตุ้มใส่ปลา กระด้ง แปมใส่ของ เครื่องมือพื้นบ้าน เพื่อใช้เอามาดํารงชีวิตของตนเอง และยังเป็นแหล่งเรียนรู้ ให้กับคนในชุมชน",
             "To Phae community uses local bamboo to create woven products like chicken coops, fish traps, and baskets, preserving traditional craftsmanship.",
             "https://www.google.com/maps/@18.8060995,97.9058811,153m/data=!3m1!1e3?entry=ttu&g_ep=EgoyMDI2MDQxMy4wIKXMDSoASAFQAw%3D%3D",
@@ -103,7 +114,7 @@ class CheckInPage extends StatelessWidget {
           buildListCard(
             context,
             "จักสาน (สานต่อวัฒนธรรม)",
-            "assets/img7.jpg",
+            "assets/images/weaving.jpg",
             "คือภาษาท้องถิ่นของชาวไทใหญ่ซึ่งหมายถึงหมวกที่ทําจากไม้ไผ่โดยเราจะนํา ไม้ไผ่มาสานเป็นรูปทรงหมวกไว้ใช้สําหรับเพื่อกันแดดหรือกันฝนและสวมในการประกอบกิจกรรมพิธีกรรมต่างๆ",
             "'Goob Tai' is the local name for Shan bamboo hats. They are used for protection against sun and rain and worn during traditional ceremonies to show local identity.",
             "https://www.google.co.th/maps/@18.8019112,97.9023032,91m/data=!3m1!1e3?hl=th&entry=ttu&g_ep=EgoyMDI2MDQxMy4wIKXMDSoASAFQAw%3D%3D",
@@ -112,7 +123,7 @@ class CheckInPage extends StatelessWidget {
           buildListCard(
             context,
             "กุ๊บไต (สารเรื่องราวแห่งวัฒนธรรม)",
-            "assets/img8.jpg",
+            "assets/images/hats_group.jpg",
             "กุ๊บไตเป็นสินค้า OTOP อีกอย่างหนึ่งของชุมชนบ้านต่อแพและยังเป็นศูนย์เรียนรู้การทํา กุ๊บไตให้กับคนในชุมชน นักเรียน นักท่องเที่ยว เพื่อสืบทอดศิลปะวัฒธรรมอันงดงามให้กับรุ่นลูกรุ่นหลาน",
             "A center for learning Goob Tai hat making. It promotes Shan arts and culture to the younger generation and tourists while supporting the local economy.",
             "https://www.google.co.th/maps/place/RW23%2BMGX+%E0%B8%95%E0%B8%B3%E0%B8%9A%E0%B8%A5+%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B9%80%E0%B8%87%E0%B8%B2+%E0%B8%AD%E0%B8%B3%E0%B9%80%E0%B8%A0%E0%B8%AD%E0%B8%82%E0%B8%B8%E0%B8%99%E0%B8%A2%E0%B8%A7%E0%B8%A1+%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%AE%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%AA%E0%B8%AD%E0%B8%99+58140/@18.8015107,97.9038154,129m/data=!3m1!1e3!4m6!3m5!1s0x30dad1b9e96bee75:0x6271c69f0d29ec16!8m2!3d18.8017812!4d97.9038736!16s%2Fg%2F11jylkczj7?hl=th&entry=ttu&g_ep=EgoyMDI2MDQxMy4wIKXMDSoASAFQAw%3D%3D",
@@ -121,16 +132,18 @@ class CheckInPage extends StatelessWidget {
           buildListCard(
             context,
             "สกรีนเสื้อ (เลื่องลืออาราม)",
-            "assets/img9.jpg",
+            "assets/images/shirt.jpg",
             "บ้านต่อแพนั้นมีสินสินค้าOTOPมากมาย เสื้อสกรีนก็ป็นสินค้าOTOPอีกอย่างหนึ่งของบ้านต่อแพโดยจะมีรูปสกรีนเป็นรูปวัดต่อแพรวมถึงเอกลักษณ์ต่างๆ ช่วยสร้างรายได้เสริมให้กับชาวบ้าน",
             "Screen-printed t-shirts featuring Wat To Phae and local icons are popular OTOP products, helping to spread awareness of the community's identity.",
             "https://www.google.co.th/maps/@18.8024041,97.9029676,433m/data=!3m1!1e3?hl=th&entry=ttu&g_ep=EgoyMDI2MDQxMy4wIKXMDSoASAFQAw%3D%3D",
             ["สกรีนเสื้อสุดเก๋ลายวัดต่อแพเป็นของฝาก"],
+
           ),
+
           buildListCard(
             context,
             "สินค้า OTOP (พบไต)",
-            "assets/img10.jpg",
+            "assets/images/otop_sign.jpg",
             "เป็นศูนย์รวมผลิตภัณฑ์สินค้า OTop ซึ่งคนในชุมชนเอาผลผลิตและวัสดุท้องถิ่นมาแปรรูปเป็นผลิตภัณฑ์ต่างๆ เช่น ยาดมสมุนไพร สบู่อโวคาโด ชุดไทใหญ่(ไต) เครื่องจักสาน และอาหารพื้นเมือง",
             "A hub for OTOP products including herbal inhalers, avocado soap, Tai Yai costumes, and local snacks like dried bananas and avocado milk.",
             "https://www.google.com/maps/@18.8011809,97.9038551,182m/data=!3m1!1e3?entry=ttu&g_ep=EgoyMDI2MDQxMy4wIKXMDSoASAFQAw%3D%3D",
@@ -190,9 +203,8 @@ class CheckInPage extends StatelessWidget {
               ),
               child: Image.asset(
                 imagePath,
-                height: 160,
                 width: double.infinity,
-                fit: BoxFit.cover,
+                fit: BoxFit.fitWidth,
               ),
             ),
           ),

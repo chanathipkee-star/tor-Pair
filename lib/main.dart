@@ -4,8 +4,10 @@ import 'store_list_page.dart';
 import 'homestay_list_page.dart';
 import 'health_route_list_page.dart';
 import 'community_experts_list_page.dart';
-import 'product_list_page.dart'; 
+import 'product_list_page.dart';
 import 'location_list_screen.dart';
+import 'preparation_page.dart';
+import 'admin_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -48,10 +50,99 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Colors.green,
         centerTitle: true,
-        leading: const Icon(Icons.menu, color: Colors.white),
+        leading: Builder(
+          builder: (context) => IconButton(
+            icon: const Icon(Icons.menu, color: Colors.white),
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+          ),
+        ),
         title: const Text(
           "HOME",
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
+      ),
+
+      // ✅ Drawer ด้านข้าง (ครึ่งหน้าจอ)
+      drawer: SizedBox(
+        width: MediaQuery.of(context).size.width * 0.55,
+        child: Drawer(
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.horizontal(right: Radius.circular(20)),
+          ),
+          child: SafeArea(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Header: โลโก้ + ชื่อ + ปุ่มปิด
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 20, 8, 12),
+                  child: Row(
+                    children: [
+                      ClipOval(
+                        child: Image.asset(
+                          'assets/images/community_store_1.jpg',
+                          width: 45,
+                          height: 45,
+                          fit: BoxFit.cover,
+                          errorBuilder: (context, e, s) => Container(
+                            width: 45,
+                            height: 45,
+                            decoration: BoxDecoration(
+                              color: Colors.green[100],
+                              shape: BoxShape.circle,
+                            ),
+                            child: const Icon(Icons.eco, color: Colors.green),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 10),
+                      const Expanded(
+                        child: Text(
+                          'ต่อ PAIR',
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      IconButton(
+                        icon: const Icon(Icons.close, size: 24),
+                        onPressed: () => Navigator.pop(context),
+                      ),
+                    ],
+                  ),
+                ),
+                const Divider(height: 1),
+                // เมนูรายการ
+                _buildMenuItem(
+                  icon: Icons.person_outline,
+                  title: 'การเตรียมตัว',
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const PreparationPage()));
+                  },
+                ),
+                _buildMenuItem(
+                  icon: Icons.chat_bubble_outline,
+                  title: 'Chat',
+                  onTap: () {
+                    Navigator.pop(context);
+                    // TODO: ไปหน้า Chat
+                  },
+                ),
+                _buildMenuItem(
+                  icon: Icons.settings_outlined,
+                  title: 'Admin',
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const AdminPage()));
+                  },
+                ),
+              ],
+            ),
+          ),
         ),
       ),
 
@@ -64,7 +155,7 @@ class _HomePageState extends State<HomePage> {
             // 1. จุดเช็คอิน
             buildHomeCard(
               context,
-              "assets/img1.png",
+              "assets/images/howto.jpg",
               "เส้นทางนิเวศวัฒนธรรมสิ่งแวดล้อม\n(Ecological and environmental)",
               "Check-in",
               onTap: () {
@@ -78,7 +169,7 @@ class _HomePageState extends State<HomePage> {
             // 2. ของกิน
             buildHomeCard(
               context,
-              "assets/img2.png",
+              "assets/images/food_dark.jpg",
               "ร้านค้า(store)",
               "store",
               onTap: () {
@@ -94,13 +185,15 @@ class _HomePageState extends State<HomePage> {
             // 3. โฮมสเตย์
             buildHomeCard(
               context,
-              "assets/img4.png",
+              "assets/images/homestay_dark.jpg",
               "โฮมสเตย์ (Homestay)",
               "Homestay",
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const HomestayListPage()),
+                  MaterialPageRoute(
+                    builder: (context) => const HomestayListPage(),
+                  ),
                 );
               },
             ),
@@ -108,7 +201,7 @@ class _HomePageState extends State<HomePage> {
             // 4. นิเวศสุขภาพ
             buildHomeCard(
               context,
-              "assets/img4.png",
+              "assets/images/health.jpg",
               "เส้นทางนิเวศสุขภาพ (Ecological Health)",
               "Ecological Health",
               onTap: () {
@@ -121,16 +214,18 @@ class _HomePageState extends State<HomePage> {
               },
             ),
 
-            // 5. ผู้เชี่ยวชาญ 
+            // 5. ผู้เชี่ยวชาญ
             buildHomeCard(
               context,
-              "assets/img4.png",
+              "assets/images/experts_banner.jpg",
               " ผู้เชี่ยวชาญนักปราชญ์ชุมชน(Community experts and scholars)",
               "Community experts and scholars",
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const CommunityExpertsListPage()),
+                  MaterialPageRoute(
+                    builder: (context) => const CommunityExpertsListPage(),
+                  ),
                 );
               },
             ),
@@ -138,13 +233,15 @@ class _HomePageState extends State<HomePage> {
             // 5. สินค้า otop
             buildHomeCard(
               context,
-              "assets/img4.png",
+              "assets/images/otop_banner.jpg",
               "สินค้า otop",
               "สินค้า otop",
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const ProductListPage()),
+                  MaterialPageRoute(
+                    builder: (context) => const ProductListPage(),
+                  ),
                 );
               },
             ),
@@ -152,14 +249,16 @@ class _HomePageState extends State<HomePage> {
             // 6.วัฒนธรรม
             buildHomeCard(
               context,
-              null,
+              "assets/images/ww2_map.jpg",
               "world war route",
               "Go world war route",
               icon: Icons.person,
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const RouteListScreen()),
+                  MaterialPageRoute(
+                    builder: (context) => const RouteListScreen(),
+                  ),
                 );
               },
             ),
@@ -181,24 +280,45 @@ class _HomePageState extends State<HomePage> {
         },
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "HOME"),
+
           BottomNavigationBarItem(
             icon: Icon(Icons.location_on),
             label: "จุดเช็คอิน",
           ),
+
           BottomNavigationBarItem(
             icon: Icon(Icons.restaurant),
             label: "ร้านค้า",
           ),
+
           BottomNavigationBarItem(
             icon: Icon(Icons.home_work),
             label: "โฮมสเตย์",
           ),
+
           BottomNavigationBarItem(
             icon: Icon(Icons.explore),
             label: "เส้นทางสีแดง",
           ),
         ],
       ),
+    );
+  }
+
+  // ✅ Menu Item Widget
+  Widget _buildMenuItem({
+    required IconData icon,
+    required String title,
+    required VoidCallback onTap,
+  }) {
+    return ListTile(
+      leading: Icon(icon, color: Colors.black87, size: 24),
+      title: Text(
+        title,
+        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+      ),
+      onTap: onTap,
+      contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 2),
     );
   }
 
@@ -226,7 +346,7 @@ class _HomePageState extends State<HomePage> {
                 imagePath,
                 height: 180,
                 width: double.infinity,
-                fit: BoxFit.cover,
+                fit: BoxFit.fill,
                 errorBuilder: (context, error, stackTrace) => Container(
                   height: 150,
                   color: Colors.grey[200],
@@ -263,8 +383,6 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-
 
 class EcoHealthPage extends StatelessWidget {
   const EcoHealthPage({super.key});
@@ -308,8 +426,13 @@ class OtopListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("สินค้า OTOP", style: TextStyle(color: Colors.white)), backgroundColor: Colors.green),
-      body: const Center(child: Text("หน้ารายการสินค้า OTOP (กำลังรอการสร้างไฟล์เต็ม)")),
+      appBar: AppBar(
+        title: const Text("สินค้า OTOP", style: TextStyle(color: Colors.white)),
+        backgroundColor: Colors.green,
+      ),
+      body: const Center(
+        child: Text("หน้ารายการสินค้า OTOP (กำลังรอการสร้างไฟล์เต็ม)"),
+      ),
     );
   }
 }

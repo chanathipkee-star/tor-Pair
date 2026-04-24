@@ -37,10 +37,9 @@ class HomestayDetailPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Image.asset(
-              data['image']!,
+              data['image'] ?? '',
               width: double.infinity,
-              height: 250,
-              fit: BoxFit.cover,
+              fit: BoxFit.contain,
               errorBuilder: (context, e, s) => Container(height: 250, color: Colors.grey),
             ),
             Padding(
@@ -49,11 +48,11 @@ class HomestayDetailPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    data['name']!,
+                    data['name'] ?? '',
                     style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 8),
-                  Text(data['address']!, style: const TextStyle(color: Colors.grey)),
+                  Text(data['address'] ?? '', style: const TextStyle(color: Colors.grey)),
                   const Divider(height: 30),
                   
                   // แสดงเวลาเปิด-ปิด ตามภาพ

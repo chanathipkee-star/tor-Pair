@@ -26,7 +26,7 @@ class RouteListScreen extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(15),
                 child: Image.asset(
-                  'assets/images/map_route.jpg', // อย่าลืมเช็ค path รูปนะ
+                  'assets/images/culture_route_map.jpg', // อย่าลืมเช็ค path รูปนะ
                   fit: BoxFit.cover,
                   errorBuilder: (context, e, s) => Container(height: 200, color: Colors.grey[200], child: const Icon(Icons.map)),
                 ),
@@ -99,7 +99,7 @@ class RouteListScreen extends StatelessWidget {
               context,
               "5. พิพิธภัณฑ์",
               "แหล่งรักษาความทรงจำ (Museum)",
-              'assets/images/museum.jpg',
+              'assets/images/museum_khunyuam.jpg',
               "ตั้งอยู่ตรงข้ามถนนเยื้องกับวัดม่วยต่อก่อตั้งขึ้นโดยพันตำรวจโทเชิดชาย ชมธวัช หลังจากที่ได้เข้ามารับราชการและเห็นถึงความสำคัญของเหตุการณ์สงครามโลกครั้งที่ 2 ที่มีความเกี่ยวข้องกับคนขุนยวมที่หลงเหลือหลักฐานคือข้าวของของทหารญี่ปุ่นที่ผู้คนเก็บไว้จำนวนมากจึงได้ทำการรวบรวมและก่อตั้งเป็นพิพิธภัณฑ์ในปี 2539 ก่อนจะได้รับการปรับปรุงอีกเรื่อยมาภายในมีข้าวของและภาพถ่ายเก่าที่หาชมได้ยาก เศษซากรถยนต์ หีบใส่ของ ที่สื่อถึงการคมนาคมและการลำเลียงสิ่งของของทหารญี่ปุ่น",
               historyEng: "Located across the street from Wat Muay Tor, the museum was established by Lieutenant Colonel Cherdchai Chomthawach. After recognizing the significance of World War II events related to Khun Yuam and the numerous Japanese military artifacts collected by locals, he founded the museum in 1996. The museum has been updated over time, showcasing rare old photographs, vehicle remnants, and storage boxes representing Japanese military logistics.",
               mapUrl: "https://www.google.com/maps/place/%E0%B8%AD%E0%B8%99%E0%B8%B8%E0%B8%AA%E0%B8%A3%E0%B8%93%E0%B9%8C%E0%B8%AA%E0%B8%96%E0%B8%B2%E0%B8%99%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%A3%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B9%84%E0%B8%97%E0%B8%A2+%E0%B8%8D%E0%B8%B5%E0%B9%88%E0%B8%9B%E0%B8%B8%E0%B9%88%E0%B8%99/@18.8255691,97.9216446,4115m/data=!3m1!1e3!4m10!1m2!2m1!1z4Lin4Lix4LiU!3m6!1s0x30dacfdfb4879263:0x44515b27d4cf8986!8m2!3d18.8302747!4d97.9331745!15sCgnguKfguLHguJRaCyIJ4Lin4Lix4LiUkgEGbXVzZXVtmgEjQ2haRFNVaE5NRzluUzBWSlEwRm5TVU0xZW5aZlVXUlJFQUXgAQD6AQQIJxBH!16s%2Fg%2F1hm44g99c?entry=ttu&g_ep=EgoyMDI2MDQxNS4wIKXMDSoASAFQAw%3D%3D",
@@ -110,7 +110,7 @@ class RouteListScreen extends StatelessWidget {
               context,
               "6. ช่องเขาเอวขาด",
               "ทางเก่าที่ไม่เก่า (Khao Ev Khaad Pass)",
-              'assets/images/ev_khaad.jpg',
+              'assets/images/khao_ev_khaad.jpg',
               "เส้นทางเดินเท้ากลับเข้าสู่เชียงใหม่ เส้นทางขุนยวม - แม่แจ่มเป็นอีกหนึ่งเส้นทางที่ถูกใช้ในการเดินทางปรากฎเป็นเรื่องเล่าในความทรงจำของชาวบ้านชาติพันธุ์ม้งในหมู่บ้านปางเกี๊ยะถึงการเดินทางผ่านของทหารยื่อเป็ง (ทหารญี่ปุ่นที่เรียกพ้องมาจากภาษาจีน日本) ผ่านเส้นวัวต่างซึ่งเป็นทางเดินเท้าโบราณที่ผู้คนทั้งคนไทใหญ่ คนเมือง จีนฮ่อ ม้ง กะเหรี่ยงใช้เป็นเส้นทางสัญจรหลักทางสายนี้จะอยู่คู่ขนานกับถนนสายหลักในปัจจุบัน ไม่มีเส้นทางขึ้นดอยหรือผ่านภูมิประเทศที่ยากลำบากแต่จะเลียบไปตามลำห้วยที่เรียกว่า ห้วยเจ็บตีนก่อนเข้าสู่ช่องเขาเอวขาด",
               historyEng: "The walking path returning to Chiang Mai, the Khun Yuam - Mae Chaem route, is another significant travel route. It is remembered by the Hmong community in Pang Kia village for the passage of Japanese soldiers. The route, known as \"Wua Tang,\" is an ancient footpath used by Tai Yai, city dwellers, Chinese Hmong, and Karen people. It runs parallel to the modern main road, without steep climbs or difficult terrain, following a stream called \"Huay Jeb Teen\" before reaching the Khao Ev Khaad Pass.",
               features: "ระหว่างเดินทางถอยทัพมีชาวบ้านบางคนได้ขโมยข้าวของจากทหารญี่ปุ่นเพราะสิ่งของเหล่านี้ประโยชน์และจำเป็นต่อการดำเนินชีวิตแต่หาได้ยากมาในสมัยนั้น ได้แก่ ปืน กระสุน หม้อ สำหรับการเดินทางไกลครั้งนี้ รองเท้าคือสมบัติชิ้นที่สำคัญที่สุดสำหรับการเดินเท้า",

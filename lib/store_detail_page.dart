@@ -30,7 +30,7 @@ class StoreDetailPage extends StatelessWidget {
           children: [
             // ส่วนรูปภาพด้านบน
             Image.asset(
-              data['image']!,
+              data['image'] ?? '',
               width: double.infinity,
               height: 250,
               fit: BoxFit.cover,
@@ -47,7 +47,7 @@ class StoreDetailPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    data['name']!,
+                    data['name'] ?? 'ไม่มีชื่อ',
                     style: const TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
@@ -57,11 +57,11 @@ class StoreDetailPage extends StatelessWidget {
                   const SizedBox(height: 20),
 
                   // ข้อมูลเบอร์โทร
-                  _buildInfoRow(Icons.phone, "เบอร์", data['phone']!),
+                  _buildInfoRow(Icons.phone, "เบอร์", data['phone'] ?? "ไม่มีเบอร์โทรศัพท์"),
                   const Divider(),
 
                   // ข้อมูลที่อยู่
-                  _buildInfoRow(Icons.location_on, "ที่อยู่", data['address']!),
+                  _buildInfoRow(Icons.location_on, "ที่อยู่", data['address'] ?? "ไม่มีที่อยู่"),
                   const SizedBox(height: 30),
 
                   // ปุ่ม Google Maps

@@ -17,10 +17,9 @@ class ProductDetailPage extends StatelessWidget {
           children: [
             // 1. รูปภาพสินค้า
             Image.asset(
-              data['image']!,
+              data['image'] ?? '',
               width: double.infinity,
-              height: 300,
-              fit: BoxFit.cover,
+              fit: BoxFit.contain,
             ),
 
             // 2. แถบชื่อสินค้า (Gradient สีฟ้า)
@@ -33,7 +32,7 @@ class ProductDetailPage extends StatelessWidget {
                 ),
               ),
               child: Text(
-                data['name']!,
+                data['name'] ?? '',
                 textAlign: TextAlign.center,
                 style: const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
               ),
@@ -45,13 +44,13 @@ class ProductDetailPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text("ราคาโดยประมาณ", style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold)),
-                  Text(data['price']!, style: const TextStyle(fontSize: 20, color: Colors.green, fontWeight: FontWeight.bold)),
+                  Text(data['price'] ?? '', style: const TextStyle(fontSize: 20, color: Colors.green, fontWeight: FontWeight.bold)),
                   const SizedBox(height: 20),
                   
                   const Text("รายละเอียดสินค้า", style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold)),
                   const SizedBox(height: 5),
                   Text(
-                    data['description']!, 
+                    data['description'] ?? '', 
                     style: const TextStyle(fontSize: 16, height: 1.5),
                   ),
                   

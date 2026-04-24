@@ -20,7 +20,7 @@ class HealthRouteDetailPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFF4CAF50),
-        title: Text(data['name']!, style: const TextStyle(color: Colors.white)),
+        title: Text(data['name'] ?? '', style: const TextStyle(color: Colors.white)),
         iconTheme: const IconThemeData(color: Colors.white),
       ),
       body: SingleChildScrollView(
@@ -28,7 +28,7 @@ class HealthRouteDetailPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Image.asset(
-              data['image']!,
+              data['image'] ?? '',
               width: double.infinity,
               height: 250,
               fit: BoxFit.cover,
@@ -45,7 +45,7 @@ class HealthRouteDetailPage extends StatelessWidget {
                 ),
               ),
               child: Text(
-                data['name']!,
+                data['name'] ?? '',
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   color: Colors.white,
@@ -59,7 +59,7 @@ class HealthRouteDetailPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    data['name']!,
+                    data['name'] ?? '',
                     style: const TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
@@ -67,13 +67,13 @@ class HealthRouteDetailPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 15),
                   Text(
-                    data['description']!,
+                    data['description'] ?? '',
                     style: const TextStyle(fontSize: 16),
                   ),
-                  if (data.containsKey('description_en') && data['description_en']!.isNotEmpty) ...[
+                  if (data['description_en'] != null && data['description_en']!.isNotEmpty) ...[
                     const SizedBox(height: 15),
                     Text(
-                      data['description_en']!,
+                      data['description_en'] ?? '',
                       style: const TextStyle(fontSize: 16, color: Colors.black87),
                     ),
                   ],
